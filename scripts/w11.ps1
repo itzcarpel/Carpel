@@ -34,7 +34,7 @@ Write-Host -ForegroundColor Red " | . ` |/ _` | '__/ __/ _ \ \/  \/ /  | || |";
 Write-Host -ForegroundColor Red " | |\  | (_| | | | (_| (_) \  /\  /   | || |";
 Write-Host -ForegroundColor Red " |_| \_|\__,_|_|  \___\___/ \/  \/    |_||_|";
 Write-Host "";
-Write-Host -ForegroundColor Blue "   Made By Carpel (Shitty ScreenSharer) For NarcoCity - " -NoNewLine
+Write-Host -ForegroundColor Blue "   Made By Carpel For NarcoCity - " -NoNewLine
 Write-Host -ForegroundColor Red "discord.gg/narcocity";
 Write-Host "";
 
