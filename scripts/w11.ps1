@@ -1,9 +1,5 @@
-$inputFile = "C:\Windows\appcompat\pca\PcaGeneralDb0.txt"
 
-if (-not (Test-Path $inputFile)) {
-    Write-Host "This script is not compatible for this version of Windows"
-    exit
-}
+$inputFile = "C:\Windows\appcompat\pca\PcaGeneralDb0.txt"
 
 function IsSuspicious($productname, $publisher, $productversion) {
     return [string]::IsNullOrEmpty($productname) -and [string]::IsNullOrEmpty($publisher) -and [string]::IsNullOrEmpty($productversion)
@@ -28,6 +24,7 @@ function ParseLine($line) {
     }
 }
 
+data in an array
 $data = Get-Content $inputFile | ForEach-Object { ParseLine $_ }
 
 $data | Out-GridView
