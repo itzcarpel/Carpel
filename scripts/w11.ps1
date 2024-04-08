@@ -40,6 +40,6 @@ Write-Host "";
 
 $data = Get-Content $inputFile | ForEach-Object { ParseLine $_ }
 
-$data | Out-GridView
+$data | Out-GridView -PassThru -Title 'PCA Results'
 
 Read-Host "Press Enter to close this window"
