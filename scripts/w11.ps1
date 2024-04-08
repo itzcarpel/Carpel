@@ -1,11 +1,8 @@
-
 $inputFile = "C:\Windows\appcompat\pca\PcaGeneralDb0.txt"
 
-# Define a function to check if a line is suspicious
 function IsSuspicious($productname, $publisher, $productversion) {
     return [string]::IsNullOrEmpty($productname) -and [string]::IsNullOrEmpty($publisher) -and [string]::IsNullOrEmpty($productversion)
 }
-
 
 function ParseLine($line) {
     $fields = $line -split '\|'
@@ -44,3 +41,5 @@ Write-Host "";
 $data = Get-Content $inputFile | ForEach-Object { ParseLine $_ }
 
 $data | Out-GridView
+
+Read-Host "Press Enter to close this window"
