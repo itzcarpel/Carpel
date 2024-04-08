@@ -1,4 +1,4 @@
-# Define input file path
+
 $inputFile = "C:\Windows\appcompat\pca\PcaGeneralDb0.txt"
 
 # Define a function to check if a line is suspicious
@@ -6,7 +6,7 @@ function IsSuspicious($productname, $publisher, $productversion) {
     return [string]::IsNullOrEmpty($productname) -and [string]::IsNullOrEmpty($publisher) -and [string]::IsNullOrEmpty($productversion)
 }
 
-# Define a function to parse each line of the input file
+
 function ParseLine($line) {
     $fields = $line -split '\|'
     $productname = if ($fields[3] -eq '') { $null } else { $fields[3] }
@@ -26,8 +26,7 @@ function ParseLine($line) {
     }
 }
 
-# Read the input file line by line with UTF-16 LE encoding, parse each line, and store the parsed data in an array
-$data = Get-Content -Path $inputFile -Encoding Unicode | ForEach-Object { ParseLine $_ }
+data in an array
+$data = Get-Content $inputFile | ForEach-Object { ParseLine $_ }
 
-# Display the parsed data in Out-GridView
 $data | Out-GridView
