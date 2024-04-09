@@ -8,22 +8,6 @@ enum ServiceControllerExType {
     Driver  = 0x1
     Service = 0x2
 }
-
-Clear-Host
-
-Write-Host "";
-Write-Host "";
-Write-Host -ForegroundColor Red "   _   __                     _____           ____            ";
-Write-Host -ForegroundColor Red "  / | / /___ _______________ / ___/   _______/ __ \______   __";
-Write-Host -ForegroundColor Red " /  |/ / __ `/ ___/ ___/ __ \\__ \ | / / ___/ / / / ___/ | / /";
-Write-Host -ForegroundColor Red "/ /|  / /_/ / /  / /__/ /_/ /__/ / |/ / /__/ /_/ / /   | |/ / ";
-Write-Host -ForegroundColor Red "/_/ |_/\__,_/_/   \___/\____/____/|___/\___/_____/_/    |___/  ";
-Write-Host "";
-Write-Host -ForegroundColor Blue "   Made By Carpel For NarcoCity - " -NoNewLine
-Write-Host -ForegroundColor Red "discord.gg/narcocity";
-Write-Host "";
-
-
 class ServiceControllerEx {
     [ServiceControllerExType] $Type
     [ServiceType] $ServiceType
@@ -285,5 +269,18 @@ function Get-ServiceEx {
     }
 }
 
+Clear-Host
+
+Write-Host "";
+Write-Host "";
+Write-Host -ForegroundColor Red "   _   __                     _____           ____            ";
+Write-Host -ForegroundColor Red "  / | / /___ _______________ / ___/   _______/ __ \______   __";
+Write-Host -ForegroundColor Red " /  |/ / __ `/ ___/ ___/ __ \\__ \ | / / ___/ / / / ___/ | / /";
+Write-Host -ForegroundColor Red "/ /|  / /_/ / /  / /__/ /_/ /__/ / |/ / /__/ /_/ / /   | |/ / ";
+Write-Host -ForegroundColor Red "/_/ |_/\__,_/_/   \___/\____/____/|___/\___/_____/_/    |___/  ";
+Write-Host "";
+Write-Host -ForegroundColor Blue "   Made By Carpel For NarcoCity - " -NoNewLine
+Write-Host -ForegroundColor Red "discord.gg/narcocity";
+Write-Host "";
 # Call the function to execute the script logic
 Get-ServiceEx
