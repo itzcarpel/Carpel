@@ -53,7 +53,7 @@ if (Test-Path $pathsFile -PathType Leaf) {
 
     # Display unsigned files in a grid view
     if ($unsignedFiles.Count -gt 0) {
-        $unsignedFiles | Out-GridView
+        $unsignedFiles | Out-GridView -PassThru -Title 'Windows Security Script by Carpel'
     } else {
         Write-Host "No unsigned files found."
     }
