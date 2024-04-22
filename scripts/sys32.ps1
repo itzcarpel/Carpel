@@ -2,7 +2,7 @@ Write-Host @"
 [38;2;160;32;240;48;2m  _   _                     _____ ____ ___  
  | \ | |                   / ____|___ \__ \ 
  |  \| | __ _ _ __ ___ ___| (___   __) | ) |
- | . ` |/ _` | '__/ __/ _ \\___ \ |__ < / / 
+ |  . ` |/ _` | '__/ __/ _ \\___ \ |__ < / / 
  | |\  | (_| | | | (_| (_) |___) |___) / /_ 
  |_| \_|\__,_|_|  \___\___/_____/|____/_____[0m
                                             
@@ -20,16 +20,16 @@ $files = Get-ChildItem -Path $system32Path -File -Recurse -ErrorAction SilentlyC
 foreach ($file in $files) {
     # Check if the file is an executable
     if ($file.Extension -eq ".exe") {
-        # Check if the file is signed
+        # Check if the file has a digital signature
+        $signature = $null
         try {
-            $signature = Get-AuthenticodeSignature $file.FullName -ErrorAction Stop
-            if (-not $signature) {
-                Write-Host "Unsigned: $($file.FullName)"
-            }
+            $signature = (Get-AuthenticodeSignature $file.FullName).Status
         } catch {
-            if ($_.Exception.GetType().FullName -eq 'System.Security.Cryptography.CryptographicException') {
-                Write-Host "Unsigned: $($file.FullName)"
-            }
+            # Ignore errors caused by unsigned files
+        }
+
+        if ($signature -ne "Valid") {
+            Write-Host "Unsigned: $($file.FullName)"
         }
     }
 }
