@@ -2,7 +2,7 @@ $inputFile = "C:\Windows\appcompat\pca\PcaGeneralDb0.txt"
 
 function IsSuspicious($productname, $publisher, $productversion, $exitcode) {
     $isNull = [string]::IsNullOrEmpty($productname) -and [string]::IsNullOrEmpty($publisher) -and [string]::IsNullOrEmpty($productversion)
-    $isInstallerFailed = $exitcode -like "*Installerfailed*"
+    $isInstallerFailed = $exitcode -like "Installer failed"
     $isKernelDriver = $exitcode -like "*KernelDriver*"
     return ($isNull -and ($isInstallerFailed -or $isKernelDriver))
 }
