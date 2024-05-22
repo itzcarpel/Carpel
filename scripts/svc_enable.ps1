@@ -3,15 +3,14 @@ Write-Host @"
  _   _                     _____           
 | \ | |                   /  ___|          
 |  \| | __ _ _ __ ___ ___ \ `--.__   _____ 
-| . ` |/ _` | '__/ __/ _ \ `--. \ \ / / __|
+|  . ` |/ _` | '__/ __/ _ \ `--. \ \ / / __|
 | |\  | (_| | | | (_| (_) /\__/ /\ V / (__ 
 \_| \_/\__,_|_|  \___\___/\____/  \_/ \___|
                                            
                                            
 "@ -ForegroundColor Cyan
 
-Write-Host "Made by Carpel for NarcoCity`n"
-Write-Host "`n"
+Write-Host "Made by Carpel for NarcoCity"
 
 $services = @('SysMain', 'PcaSvc', 'DiagTrack')
 
